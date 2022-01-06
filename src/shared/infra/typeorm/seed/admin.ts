@@ -5,7 +5,7 @@ import { createConnection } from "..";
 
 async function createAdminUser() {
   try {
-    const connection = await createConnection("localhost");
+    const connection = await createConnection();
 
     const id = uuid();
     const hashedPassword = await hash("admin", 8);
