@@ -1,20 +1,6 @@
 version: "3.8"
 
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    container_name: rentx
-    ports:
-      - 3333:3333
-    volumes:
-      - .:/usr/app
-    links:
-      - db
-    depends_on:
-      - db
-
   db:
     image: postgres
     container_name: psql
@@ -27,6 +13,11 @@ services:
       - POSTGRES_DB=rentx
     volumes:
       - pgdata:/data/postgres
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
 
 volumes:
   pgdata:
