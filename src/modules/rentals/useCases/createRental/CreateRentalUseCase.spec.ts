@@ -93,8 +93,6 @@ describe("Create rental", () => {
         user_id: "userId",
         expected_return_date: dayjs().toDate(),
       })
-    ).rejects.toEqual(
-      new AppError("Rentals must be at least 24 hour long.")
-    );
+    ).rejects.toEqual(new AppError("Rentals must be at least 24 hour long."));
   });
 });

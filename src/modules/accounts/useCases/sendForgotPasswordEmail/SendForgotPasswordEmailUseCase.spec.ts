@@ -1,7 +1,7 @@
 import { UsersRepositoryInMemory } from "@modules/accounts/repositories/in-memory/UsersRepositoryInMemory";
 import { UserTokensRepositoryInMemory } from "@modules/accounts/repositories/in-memory/UserTokensRepositoryInMemory";
 import { DayjsDateProvider } from "@shared/container/providers/DateProvider/implementations/DayjsDateProvider";
-import { EtherealEmailProviderInMemory } from "@shared/container/providers/MailProvider/in-memory/EtherealEmailProviderInMemory";
+import { EtherealMailProviderInMemory } from "@shared/container/providers/MailProvider/in-memory/EtherealMailProviderInMemory";
 import { AppError } from "@shared/errors/AppError";
 
 import { SendForgotPasswordEmailUseCase } from "./SendForgotPasswordEmailUseCase";
@@ -9,7 +9,7 @@ import { SendForgotPasswordEmailUseCase } from "./SendForgotPasswordEmailUseCase
 let usersRepositoryInMemory: UsersRepositoryInMemory;
 let userTokensRepositoryInMemory: UserTokensRepositoryInMemory;
 let dateProvider: DayjsDateProvider;
-let emailProvider: EtherealEmailProviderInMemory;
+let emailProvider: EtherealMailProviderInMemory;
 let sendForgotPasswordEmailUseCase: SendForgotPasswordEmailUseCase;
 
 describe("Send Forgot Mail", () => {
@@ -17,7 +17,7 @@ describe("Send Forgot Mail", () => {
     usersRepositoryInMemory = new UsersRepositoryInMemory();
     userTokensRepositoryInMemory = new UserTokensRepositoryInMemory();
     dateProvider = new DayjsDateProvider();
-    emailProvider = new EtherealEmailProviderInMemory();
+    emailProvider = new EtherealMailProviderInMemory();
 
     sendForgotPasswordEmailUseCase = new SendForgotPasswordEmailUseCase(
       usersRepositoryInMemory,

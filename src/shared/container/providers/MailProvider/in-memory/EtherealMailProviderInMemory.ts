@@ -5,7 +5,7 @@ interface IEmailData {
   link: string;
 }
 
-class EtherealEmailProviderInMemory implements IEmailProvider {
+class EtherealMailProviderInMemory implements IEmailProvider {
   messages: unknown[] = [];
 
   async sendEmail(
@@ -23,4 +23,4 @@ class EtherealEmailProviderInMemory implements IEmailProvider {
   }
 }
 
-export { EtherealEmailProviderInMemory };
+export { EtherealMailProviderInMemory };
