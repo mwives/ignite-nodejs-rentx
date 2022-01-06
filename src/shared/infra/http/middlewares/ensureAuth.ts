@@ -4,7 +4,11 @@ import { JwtPayload, Secret, verify } from "jsonwebtoken";
 import auth from "@config/auth";
 import { AppError } from "@shared/errors/AppError";
 
-async function ensureAuth(req: Request, res: Response, next: NextFunction) {
+async function ensureAuth(
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> {
   try {
     const authHeader = req.headers.authorization;
 

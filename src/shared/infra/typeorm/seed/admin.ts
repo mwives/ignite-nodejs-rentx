@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 
 import { createConnection } from "..";
 
-async function createAdminUser() {
+async function createAdminUser(): Promise<void> {
   try {
     const connection = await createConnection();
 
