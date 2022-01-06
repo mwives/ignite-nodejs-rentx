@@ -8,6 +8,7 @@
     "typeorm": "tsnd -r tsconfig-paths/register ./node_modules/typeorm/cli --config ./ormconfig.json",
     "test": "NODE_ENV=test jest --runInBand --detectOpenHandles",
     "seed:admin": "tsnd ./src/shared/infra/typeorm/seed/admin.ts",
+    "lint": "eslint .",
     "build": "babel src --extensions \".ts\" --out-dir dist --copy-files"
   },
   "dependencies": {
